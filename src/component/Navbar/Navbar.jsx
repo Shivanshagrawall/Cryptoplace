@@ -33,14 +33,19 @@ const Navbar = () => {
   return (
     <div className='navbar'>
       <Link to='/'>
-      <img src={logo} alt="logo" className='logo' />
+      {/* <img src={logo} alt="logo" className='logo' /> */}
+      <h2 className='logo'>Crypto Tracking</h2>
       </Link>
         
         <ul>
-            <Link to='/'><li>Home</li></Link>
+            {/* <Link to='/'><li>Home</li></Link>
             <li>Features</li>
             <li>Pricing</li>
-            <li>Blog</li>
+            <li>Blog</li> */}
+            <Link><li className="menu__link">Home</li></Link>
+            <li className="menu__link">Features</li>
+            <li className="menu__link">Pricing</li>
+            <li className="menu__link">Blog</li>
         </ul>
         <div className="nav-right">
           <select onChange={currencyHandler}>
@@ -48,7 +53,7 @@ const Navbar = () => {
             <option value="eur">EUR</option>
             <option value="inr">INR</option>
           </select>
-          <button>Sign Up <img src={arrowIcon} alt="arrow icon" /></button>
+          <button>Sign Up </button>
         </div>
     </div>
   )

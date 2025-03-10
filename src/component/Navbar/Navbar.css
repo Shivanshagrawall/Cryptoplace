@@ -1,50 +1,74 @@
-.navbar{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 10%;
-    color: #ddd;
-    border-bottom: 2px solid #3c3c3c;
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10%;
+  color: #ddd;
+  border-bottom: 2px solid #3c3c3c;
 }
 
-.navbar .logo{
-    width: max(12vw, 120px);
+.navbar .logo {
+  /* width: max(12vw, 120px); */
 }
 
-.navbar ul{
-    display: flex;
-    gap: 40px;
-    list-style: none;
+.navbar ul {
+  display: flex;
+  gap: 40px;
+  list-style: none;
 }
 
-.navbar ul li{
-    cursor: pointer;
+/* .navbar ul li {
+  cursor: pointer;
 }
-.navbar ul li:hover{
-    transform: scale(1.05);
-    border-bottom: 1px solid white;
+.navbar ul li:hover {
+  transform: scale(1.05);
+  border-bottom: 1px solid white;
+} */
+
+.menu__link {
+  color: #fff;
+  line-height: 2;
+  position: relative;
+  cursor: pointer;
 }
 
-.nav-right{
-    display: flex;
-    align-items: center;
-    gap: max(1vw,12px);
+.menu__link::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -0.25rem;
+  right: 0;
+  transition: right 0.4s, width 0.4s, left 0.4s;
 }
 
-.navbar select{
-    padding: 5px 8px;
-    border-radius: 6px;
-    border: 2px solid white;
-    background: transparent;
-    color: white;
+.menu__link:hover::before {
+  width: 100%;
+  left: 0;
 }
 
-.navbar option{
-    background-color: #09005c;
-    color: white;
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: max(1vw, 12px);
 }
 
-.navbar button{
+.navbar select {
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+}
+
+.navbar option {
+  background-color: #09005c;
+  color: white;
+}
+
+/* .navbar button{
     display: flex;
     align-items: center;
     gap: 10px;
@@ -56,31 +80,65 @@
     background:white;
     border: none;
     cursor: pointer;
+} */
+
+.navbar button {
+  padding: 10px 25px;
+  border: unset;
+  border-radius: 20px;
+  color: #212121;
+  z-index: 1;
+  background: #e8e8e8;
+  position: relative;
+  font-weight: 500;
+  font-size: 15px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+  overflow: hidden;
+  gap: 10px;
+  cursor: pointer;
 }
 
-.navbar button img{
-    width: 13px;
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #7927ff;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
 }
 
-@media (max-width:900px) {
-    .navbar{
-        padding: 20px 8%;
-    }
-    .navbar button{
-        gap: 8px;
-        padding: 8px 18px;
-        font-size: 14px;
-    }
+button:hover {
+  color: #e8e8e8;
 }
 
-@media (max-width:768px){
-    .navbar{
-        padding: 20px 5%;
-    }
-    .navbar ul{
-        display: none;
-    }
-    .navbar button img{
-        width: 12px;
-    }
+button:hover::before {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 20px 8%;
+  }
+  .navbar button {
+    gap: 8px;
+    padding: 8px 18px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px 5%;
+  }
+  .navbar ul {
+    display: none;
+  }
 }
