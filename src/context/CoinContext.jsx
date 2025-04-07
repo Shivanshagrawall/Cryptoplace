@@ -30,6 +30,7 @@ const CoinContextProvider = (props) => {
   useEffect(()=>{
     fetchAllCoin();
   },[currency])
+  
   const contextValue = {
     allCoin,currency,setCurrency,
   };
